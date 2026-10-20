@@ -1,0 +1,66 @@
+:root{
+  color-scheme:light;
+  --bg:#f5f7fa; --kartu:#ffffff; --teks:#1b2533; --redup:#5b6778;
+  --garis:#d9e0ea; --biru:#1f4fd8; --biru-tua:#16327f; --biru-muda:#e6edff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--teks);line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--biru);outline-offset:2px}
+
+header{position:sticky;top:0;z-index:10;background:var(--kartu);border-bottom:1px solid var(--garis)}
+nav{max-width:1000px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+nav h3{font-size:1.05rem;color:var(--biru)}
+nav div{display:flex;gap:18px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.92rem;color:var(--redup)}
+nav a:hover{color:var(--biru)}
+
+.hero{max-width:1000px;margin:auto;padding:72px 20px 56px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:12px}
+.biru{color:var(--biru);font-weight:600;margin-bottom:14px}
+.hero p{max-width:52ch;color:var(--redup)}
+.hero .biru{color:var(--biru)}
+.tombol{display:inline-block;margin-top:24px;padding:12px 24px;background:var(--biru);color:#fff;text-decoration:none;border-radius:8px;font-weight:600}
+.tombol:hover{background:var(--biru-tua);color:#fff}
+.bingkai-foto{aspect-ratio:4/5;max-width:320px;width:100%;justify-self:center;border-radius:24px 24px 120px 24px;background:var(--biru-muda);border:2px solid var(--biru);display:grid;place-items:center;overflow:hidden}
+.bingkai-foto img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.bingkai-foto span{font-size:4rem;font-weight:700;color:var(--biru);letter-spacing:.04em}
+
+main{max-width:1000px;margin:auto;padding:0 20px}
+main section{padding:48px 0;border-top:1px solid var(--garis)}
+h2{font-size:1.6rem;margin-bottom:20px;letter-spacing:-.01em}
+.tentang p{max-width:68ch}
+
+.timeline{border-left:3px solid var(--biru);margin-left:6px;display:grid;gap:20px}
+.timeline article{position:relative;margin-left:24px;background:var(--kartu);border:1px solid var(--garis);border-radius:10px;padding:16px 20px}
+.timeline article::before{content:"";position:absolute;left:-34px;top:22px;width:13px;height:13px;border-radius:50%;background:var(--biru);border:3px solid var(--bg)}
+.timeline h4{color:var(--biru);margin-bottom:4px}
+.timeline p{color:var(--redup);font-size:.95rem}
+
+.keahlian{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.keahlian article{background:var(--kartu);border:1px solid var(--garis);border-left:4px solid var(--biru);border-radius:8px;padding:16px}
+.keahlian p{color:var(--redup);font-size:.93rem;margin-top:4px}
+
+.proyek{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.proyek article{background:var(--kartu);border:1px solid var(--garis);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.proyek p{color:var(--redup);font-size:.95rem;flex:1}
+.proyek span{align-self:flex-start;background:var(--biru-muda);color:var(--biru-tua);font-size:.8rem;font-weight:600;padding:3px 10px;border-radius:99px}
+
+.kontak{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:start}
+.kontak p{color:var(--redup)}
+.info-kontak{background:var(--kartu);border:1px solid var(--garis);border-radius:12px;padding:8px 20px;display:grid}
+.info-kontak a{display:grid;gap:2px;padding:16px 0;text-decoration:none;border-bottom:1px solid var(--garis)}
+.info-kontak a:last-child{border-bottom:0}
+.info-kontak small{color:var(--redup)}
+.info-kontak b{color:var(--biru);font-size:1.05rem;word-break:break-all}
+.info-kontak a:hover b{text-decoration:underline}
+
+footer{text-align:center;padding:28px 20px;color:var(--redup);font-size:.9rem;border-top:1px solid var(--garis);margin-top:24px}
+
+@media (max-width:720px){
+  .hero,.kontak{grid-template-columns:1fr}
+  .hero{padding-top:40px}
+  .bingkai-foto{order:-1;max-width:220px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
